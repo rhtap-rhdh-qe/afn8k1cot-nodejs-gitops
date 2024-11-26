@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: afn8k1cot-nodejs-gitops
+  description: This is GitOps manifest for afn8k1cot-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: afn8k1cot-nodejs
+    backstage.io/kubernetes-id: afn8k1cot-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: afn8k1cot-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:afn8k1cot-nodejs
